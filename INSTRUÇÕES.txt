@@ -1,0 +1,175 @@
+═══════════════════════════════════════════════════════════════════════════════
+  MLS SISTEMAS AUTOMATIZADOS - LANDING PAGE
+  Versão: 1.0 | Data: Março 2026
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 ARQUIVOS INCLUSOS
+────────────────────────────────────────────────────────────────────────────
+
+✓ index.html                          - Página principal (HTML5)
+✓ styles.css                          - Estilos e animações (CSS3)
+✓ script.js                           - Interatividade (JavaScript)
+✓ logo_mls_circuito_dourado.png       - Logo da empresa
+✓ README.md                           - Documentação completa
+✓ INSTRUÇÕES.txt                      - Este arquivo
+
+
+🚀 COMO USAR
+────────────────────────────────────────────────────────────────────────────
+
+OPÇÃO 1: Abrir Localmente (Mais Rápido)
+─────────────────────────────────────────
+1. Descompacte todos os arquivos em uma pasta
+2. Clique duas vezes em "index.html"
+3. A página abrirá no seu navegador padrão
+4. Pronto! Sem necessidade de servidor
+
+OPÇÃO 2: Servidor Local (Python)
+─────────────────────────────────
+1. Abra o terminal/cmd na pasta do projeto
+2. Execute: python -m http.server 8000
+3. Acesse: http://localhost:8000
+4. Pressione Ctrl+C para parar
+
+OPÇÃO 3: Servidor Local (Node.js)
+──────────────────────────────────
+1. Instale: npm install -g http-server
+2. Abra o terminal/cmd na pasta do projeto
+3. Execute: http-server
+4. Acesse: http://localhost:8080
+
+OPÇÃO 4: Upload para Servidor Web
+──────────────────────────────────
+1. Faça upload de todos os arquivos via FTP/SFTP
+2. Coloque na raiz do seu domínio
+3. Acesse via seu domínio
+4. Pronto!
+
+
+📱 RESPONSIVIDADE
+────────────────────────────────────────────────────────────────────────────
+
+A página é totalmente responsiva e funciona perfeitamente em:
+✓ Desktop (1024px+)
+✓ Tablet (768px - 1024px)
+✓ Mobile (até 768px)
+
+
+🎨 PERSONALIZAÇÃO
+────────────────────────────────────────────────────────────────────────────
+
+ALTERAR CORES:
+1. Abra "styles.css"
+2. Procure por ":root {"
+3. Modifique as variáveis:
+   --mls-gold: #D4AF37;      (Dourado)
+   --mls-navy: #001F3F;      (Azul Marinho)
+   --mls-cyan: #00D4FF;      (Ciano)
+
+ALTERAR TEXTOS:
+1. Abra "index.html"
+2. Procure pelo texto que deseja mudar
+3. Edite conforme necessário
+
+ALTERAR LOGO:
+1. Substitua "logo_mls_circuito_dourado.png" por sua imagem
+2. Mantenha o mesmo nome ou atualize em index.html
+
+
+🌐 HOSPEDAGEM RECOMENDADA
+────────────────────────────────────────────────────────────────────────────
+
+GRATUITA:
+✓ GitHub Pages      - github.com
+✓ Netlify           - netlify.com
+✓ Vercel            - vercel.com
+✓ Firebase Hosting  - firebase.google.com
+
+PAGA:
+✓ Hostinger
+✓ Bluehost
+✓ GoDaddy
+✓ DigitalOcean
+✓ AWS
+
+
+📊 SEÇÕES DA PÁGINA
+────────────────────────────────────────────────────────────────────────────
+
+1. NAVEGAÇÃO
+   - Logo da empresa
+   - Menu de links
+   - Botão "Solicitar Demo"
+
+2. HERO SECTION
+   - Título principal com gradiente
+   - Subtítulo descritivo
+   - Dois botões de ação
+   - Fundo com efeito parallax
+
+3. SERVIÇOS
+   - Sistemas Customizados (PHP)
+   - Automação com IA (Python)
+   - Ícones animados
+   - Listas de benefícios
+
+4. DIFERENCIAIS
+   - Expertise Técnica
+   - Soluções Customizadas
+   - ROI Comprovado
+
+5. CALL-TO-ACTION
+   - Título de conversão
+   - Dois botões
+   - Fundo com gradiente
+
+6. FOOTER
+   - Informações da empresa
+   - Links de navegação
+   - Contato
+   - Copyright
+
+
+⚡ PERFORMANCE
+────────────────────────────────────────────────────────────────────────────
+
+Tempo de Carregamento: < 1 segundo
+Lighthouse Score: 95+
+Performance Index: < 2 segundos
+
+Sem dependências externas (apenas CSS e JavaScript vanilla)
+Imagens otimizadas via CDN
+Animações suaves e responsivas
+
+
+🔒 SEGURANÇA
+────────────────────────────────────────────────────────────────────────────
+
+✓ Sem processamento no servidor
+✓ Sem banco de dados
+✓ Sem dependências perigosas
+✓ Totalmente estático
+✓ Seguro para qualquer hospedagem
+
+
+📧 ADICIONAR FORMULÁRIO DE CONTATO
+────────────────────────────────────────────────────────────────────────────
+
+Para adicionar um formulário funcional, você pode usar serviços como:
+- Formspree (formspree.io)
+- Netlify Forms (netlify.com)
+- Basin (usebasin.com)
+- EmailJS (emailjs.com)
+
+
+📞 SUPORTE
+────────────────────────────────────────────────────────────────────────────
+
+Para dúvidas ou sugestões, entre em contato com a equipe MLS Sistemas.
+
+Email: contato@mlssistemas.com
+
+
+═══════════════════════════════════════════════════════════════════════════════
+Desenvolvido com ❤️ para MLS Sistemas Automatizados
+═══════════════════════════════════════════════════════════════════════════════

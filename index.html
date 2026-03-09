@@ -3,11 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MLS Sistemas Automatizados — Automação Inteligente para Empresas</title>
-  <meta name="description" content="A MLS Sistemas Automatizados cria soluções sob medida para simplificar operações, reduzir desperdícios e aumentar produtividade com tecnologia aplicada ao seu contexto real." />
-  <meta property="og:title" content="MLS Sistemas Automatizados" />
-  <meta property="og:description" content="Transforme processos em crescimento com automação inteligente." />
+  <title>Sistemas Customizados e Automação com IA para Empresas | MLS Sistemas</title>
+  <meta name="description" content="Sistemas sob medida em PHP e automação com IA em Python. Desenvolvimento de sistemas customizados e automação de processos para sua empresa. Consultoria gratuita." />
+  <meta name="keywords" content="sistemas customizados, automação com IA, automação inteligente, desenvolvimento de sistemas, sistemas sob medida, automação de processos, PHP, Python, WebApps, inteligência artificial empresas" />
+  <meta name="author" content="MLS Sistemas Automatizados" />
+  <meta name="robots" content="index, follow" />
+  <!-- Quando publicar, adicione: <link rel="canonical" href="https://SEU-DOMINIO.com/" /> e use URLs absolutas em og:url e og:image -->
+  <meta property="og:title" content="Sistemas Customizados e Automação com IA | MLS Sistemas" />
+  <meta property="og:description" content="Sistemas sob medida em PHP e automação com IA. Desenvolvimento e automação de processos para empresas. Consultoria gratuita." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/mls-sistemas-logo.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="MLS Sistemas Automatizados" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sistemas Customizados e Automação com IA | MLS Sistemas" />
+  <meta name="twitter:description" content="Sistemas sob medida e automação com IA para empresas. Consultoria gratuita." />
   <link rel="icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -180,8 +190,70 @@
     .footer-bottom { border-top: 1px solid rgba(212,175,55,0.2); padding-top: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
 
     /* SVG inline icons */
-    .icon { width: 16px; height: 16px; display: inline-block; vertical-align: middle; }
+    .icon { width: 16px; height: 16px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
     .icon-lg { width: 24px; height: 24px; }
+    .icon-xl { width: 48px; height: 48px; }
+
+    /* Ícone destaque nos cards de serviço */
+    .service-icon-wrap { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .service-card:nth-child(1) .service-icon-wrap { background: linear-gradient(135deg, var(--secondary) 0%, #c4922e 100%); color: var(--secondary-fg); }
+    .service-card:nth-child(2) .service-icon-wrap { background: linear-gradient(135deg, var(--accent) 0%, #1e9ba8 100%); color: var(--accent-fg); }
+    .service-icon-wrap .icon-xl { width: 28px; height: 28px; }
+
+    /* Animações – movimento visível em todo o site */
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes iconPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.18); }
+    }
+    @keyframes badgeGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.2); }
+      50% { box-shadow: 0 0 20px 4px rgba(255,255,255,0.25); }
+    }
+    @keyframes cardFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes ctaButtonPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(212, 160, 57, 0.4); }
+      50% { box-shadow: 0 6px 28px rgba(212, 160, 57, 0.55); }
+    }
+    /* Hero: badge e card com movimento */
+    .hero-badge { animation: badgeGlow 3s ease-in-out infinite; }
+    .hero-card { animation: cardFloat 5s ease-in-out infinite; }
+    /* Ícones dos diferenciais – flutuação bem visível */
+    .diff-icon { animation: iconFloat 2.8s ease-in-out infinite; }
+    .diff-icon:hover { animation: iconPulse 0.8s ease-in-out 3; }
+    /* Ícones dos serviços – flutuação */
+    .service-icon-wrap { animation: iconFloat 3.2s ease-in-out infinite; }
+    .service-card:nth-child(2) .service-icon-wrap { animation-delay: 0.6s; }
+    .service-card:hover .service-icon-wrap { animation: iconPulse 1s ease-in-out 2; }
+    /* Itens de impacto no hero – pulso em sequência */
+    .impact-item svg { animation: iconPulse 2.2s ease-in-out infinite; }
+    .impact-item:nth-child(1) svg { animation-delay: 0s; }
+    .impact-item:nth-child(2) svg { animation-delay: 0.35s; }
+    .impact-item:nth-child(3) svg { animation-delay: 0.7s; }
+    /* Cards de serviço e diferenciais – levantam no hover */
+    .service-card, .diff-grid .card { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+    .service-card:hover, .diff-grid .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px -15px rgba(21,45,79,0.25); }
+    /* Lista de serviços – ícone cresce no hover */
+    .service-list svg { transition: transform 0.3s ease; }
+    .service-list li:hover svg { transform: scale(1.25); }
+    /* Botão CTA – seta se move e botão pulsa levemente */
+    .cta-buttons .btn { animation: ctaButtonPulse 2.5s ease-in-out infinite; }
+    .icon-arrow-cta { transition: transform 0.3s ease; }
+    .cta-buttons .btn:hover .icon-arrow-cta { transform: translateX(6px); }
+    .cta-buttons .btn:hover { animation: none; }
+    /* Botões do hero – leve movimento no hover */
+    .hero-actions .btn { transition: transform 0.25s ease; }
+    .hero-actions .btn:hover { transform: translateY(-3px); }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-badge, .hero-card, .diff-icon, .service-icon-wrap, .impact-item svg, .cta-buttons .btn { animation: none; }
+      .service-card:hover .service-icon-wrap { animation: none; }
+    }
 
     /* RESPONSIVE */
     @media (min-width: 640px) {
@@ -208,6 +280,36 @@
       .container { padding: 0 1.25rem; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MLS Sistemas Automatizados",
+    "url": "https://mlssistemas.com.br",
+    "logo": "https://mlssistemas.com.br/assets/img/mls-sistemas-logo.png",
+    "description": "Desenvolvimento de sistemas customizados e automação com inteligência artificial para empresas.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-11-99362-1054",
+      "contactType": "customer service",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese",
+      "contactOption": "WhatsApp"
+    },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "MLS Sistemas Automatizados",
+    "description": "Sistemas customizados em PHP e automação com IA em Python para empresas. Desenvolvimento de WebApps sob medida e automação de processos.",
+    "url": "https://mlssistemas.com.br",
+    "serviceType": ["Sistemas Customizados", "Automação com IA", "Desenvolvimento de Software"],
+    "areaServed": { "@type": "Country", "name": "Brasil" }
+  }
+  </script>
 </head>
 <body>
 
@@ -215,7 +317,7 @@
   <nav class="navbar" aria-label="Navegação principal">
     <div class="container navbar-content">
       <a href="#inicio" class="navbar-brand" aria-label="MLS Sistemas - Página inicial">
-        <img src="assets/img/mls-sistemas-logo.png" alt="" class="logo-image" />
+        <img src="assets/img/mls-sistemas-logo.png" alt="Logo MLS Sistemas - Sistemas customizados e automação com IA" class="logo-image" />
         <img src="assets/img/mls-sistemas-texto.png" alt="MLS Sistemas Automatizados" class="logo-texto-image" />
       </a>
       <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar-menu">
@@ -232,20 +334,20 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content" role="main">
     <!-- HERO -->
     <section id="inicio" class="hero">
-      <img src="assets/img/mls-hero-bg.webp" alt="Fundo tecnológico com elementos de automação digital" class="hero-bg" loading="eager" />
+      <img src="assets/img/mls-hero-bg.webp" alt="Sistemas customizados e automação com inteligência artificial para empresas" class="hero-bg" loading="eager" />
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="hero-badge">Tecnologia para eficiência e escala</p>
+          <p class="hero-badge">Sistemas sob medida e automação com IA</p>
           <h1 class="hero-title">
-            Transforme processos em crescimento com
-            <span>automação inteligente</span>
+            Sistemas customizados e
+            <span>automação inteligente</span> para sua empresa
           </h1>
           <p class="hero-desc">
-            A MLS Sistemas Automatizados cria soluções sob medida para simplificar operações, reduzir desperdícios e aumentar produtividade com tecnologia aplicada ao seu contexto real.
+            Desenvolvimento de sistemas sob medida em PHP e automação de processos com IA em Python. A MLS Sistemas cria soluções customizadas para simplificar operações, reduzir custos e aumentar produtividade no seu negócio.
           </p>
           <div class="hero-actions">
             <a href="https://wa.me/5511993621054?text=Quero%20falar%20com%20um%20especialista%20da%20MLS%20Sistemas" target="_blank" rel="noreferrer" class="btn btn-secondary btn-lg">
@@ -263,15 +365,15 @@
             </div>
             <div class="card-body">
               <div class="impact-item">
-                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M7 16v-4M11 16v-6M15 16v-8M19 16V8"/></svg>
                 <span>+35% produtividade média por equipe</span>
               </div>
               <div class="impact-item">
-                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
                 <span>Até 40% de redução em tarefas manuais</span>
               </div>
               <div class="impact-item">
-                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                 <span>Implantação com acompanhamento consultivo</span>
               </div>
             </div>
@@ -285,15 +387,18 @@
       <div class="container">
         <div class="section-header">
           <p class="section-label">Serviços</p>
-          <h2 class="section-title">Soluções digitais orientadas a resultado</h2>
-          <p class="section-desc">Estruturamos tecnologia com visão de negócio para eliminar gargalos e escalar operação com previsibilidade.</p>
+          <h2 class="section-title">Sistemas customizados e automação com IA</h2>
+          <p class="section-desc">Desenvolvimento de sistemas sob medida e automação de processos com inteligência artificial. WebApps em PHP, automação em Python e integrações para sua empresa.</p>
         </div>
         <div class="services-grid">
           <!-- Service 1 -->
           <div class="card service-card">
             <div class="card-header">
-              <h3 class="card-title">Sistemas Sob Medida</h3>
-              <p class="card-desc">WebApps personalizados com arquitetura robusta para integrar setores, reduzir retrabalho e acelerar operação.</p>
+              <div class="service-icon-wrap" aria-hidden="true">
+                <svg class="icon-xl" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8M12 3v18"/></svg>
+              </div>
+              <h3 class="card-title">Sistemas customizados e WebApps</h3>
+              <p class="card-desc">Desenvolvimento de sistemas sob medida em PHP: WebApps personalizados com arquitetura robusta para integrar setores, reduzir retrabalho e acelerar operação.</p>
             </div>
             <div class="card-body">
               <ul class="service-list">
@@ -315,8 +420,11 @@
           <!-- Service 2 -->
           <div class="card service-card">
             <div class="card-header">
-              <h3 class="card-title">Automação Inteligente com IA</h3>
-              <p class="card-desc">Automatizamos tarefas repetitivas e decisões operacionais para ganhar velocidade, previsibilidade e margem.</p>
+              <div class="service-icon-wrap" aria-hidden="true">
+                <svg class="icon-xl" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="card-title">Automação de processos com IA</h3>
+              <p class="card-desc">Automação com inteligência artificial em Python: tarefas repetitivas e decisões operacionais automatizadas para ganhar velocidade, previsibilidade e margem.</p>
             </div>
             <div class="card-body">
               <ul class="service-list">
@@ -344,7 +452,7 @@
       <div class="container">
         <div class="section-header">
           <p class="section-label">Por que MLS</p>
-          <h2 class="section-title">Mais que desenvolvimento: parceria de crescimento</h2>
+          <h2 class="section-title">Especialistas em sistemas customizados e automação com IA</h2>
         </div>
         <div class="diff-grid">
           <div class="card">
@@ -382,12 +490,12 @@
     <section id="contato" class="cta">
       <div class="container">
         <div class="cta-content">
-          <h2>Pronto para transformar seu negócio?</h2>
-          <p>Entre em contato conosco para uma consultoria gratuita e descubra como podemos ajudar sua empresa.</p>
+          <h2>Consultoria gratuita em sistemas e automação</h2>
+          <p>Fale com um especialista em sistemas customizados e automação com IA. Consultoria gratuita para avaliar processos e propor a melhor solução para sua empresa.</p>
           <div class="cta-buttons">
             <a href="https://wa.me/5511993621054?text=Quero%20falar%20com%20um%20especialista%20da%20MLS%20Sistemas" target="_blank" rel="noopener noreferrer" class="btn btn-lg">
               Solicitar Consultoria
-              <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg class="icon icon-arrow-cta" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
@@ -401,7 +509,7 @@
       <div class="footer-grid">
         <div class="footer-column">
           <h4>MLS Sistemas</h4>
-          <p>Transformando negócios através de tecnologia e automação.</p>
+          <p>Desenvolvimento de sistemas customizados e automação com IA para empresas. Transformando negócios através de tecnologia.</p>
         </div>
         <div class="footer-column">
           <h4>Serviços</h4>

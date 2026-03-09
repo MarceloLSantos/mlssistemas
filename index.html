@@ -1,232 +1,515 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLS Sistemas Automatizados - Transforme seu Negócio com Automação Inteligente</title>
-    <meta name="description" content="Sistemas customizados em PHP e automação com IA para impulsionar sua eficiência operacional e crescimento empresarial.">
-    <meta name="keywords" content="sistemas customizados, automação, IA, PHP, Python, desenvolvimento web">
-    <meta name="author" content="MLS Sistemas Automatizados">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLS Sistemas Automatizados — Automação Inteligente para Empresas</title>
+  <meta name="description" content="A MLS Sistemas Automatizados cria soluções sob medida para simplificar operações, reduzir desperdícios e aumentar produtividade com tecnologia aplicada ao seu contexto real." />
+  <meta property="og:title" content="MLS Sistemas Automatizados" />
+  <meta property="og:description" content="Transforme processos em crescimento com automação inteligente." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f0f4f8;
+      --fg: #132b4a;
+      --card: #ffffff;
+      --card-fg: #132b4a;
+      --primary: #152d4f;
+      --primary-fg: #ffffff;
+      --secondary: #d4a039;
+      --secondary-fg: #112544;
+      --muted: #e2e8f0;
+      --muted-fg: #4a5c72;
+      --accent: #2bb5c4;
+      --accent-fg: #112544;
+      --border: #c9d4e0;
+      --gold: #d4a039;
+      --cyan: #2bb5c4;
+      --navy: #152d4f;
+      --radius: 0.75rem;
+      --shadow: 0 24px 60px -24px rgba(21,45,79,0.35);
+      --font-display: 'Outfit', system-ui, sans-serif;
+      --font-body: 'Manrope', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--fg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.15; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAVBAR (igual ao index.html) */
+    .navbar { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border); }
+    .navbar-content { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; }
+    .navbar-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; }
+    .logo-image { height: 6.5rem; width: auto; object-fit: contain; }
+    .logo-texto-image { height: 4.5rem; width: auto; object-fit: contain; }
+    .navbar-menu { display: none; gap: 2rem; }
+    .nav-cta { display: none; }
+    .menu-toggle { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 10px; background: transparent; border: none; cursor: pointer; z-index: 1001; transition: all 0.2s; }
+    .menu-toggle .menu-toggle-bar { display: block; width: 22px; height: 2px; background: var(--fg); border-radius: 2px; transition: all 0.2s; }
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .menu-toggle:hover { opacity: 0.8; }
+    .nav-link { font-size: 0.95rem; font-weight: 600; color: var(--muted-fg); }
+    .nav-link:hover { color: var(--primary); }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: var(--radius); font-family: var(--font-body); font-weight: 700; font-size: 0.875rem; cursor: pointer; border: none; transition: all 0.2s; }
+    .btn-primary { background: var(--primary); color: var(--primary-fg); }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-secondary { background: var(--secondary); color: var(--secondary-fg); }
+    .btn-secondary:hover { opacity: 0.9; }
+    .btn-outline { background: rgba(255,255,255,0.1); color: var(--primary-fg); border: 1px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { background: rgba(255,255,255,0.2); }
+    .btn-lg { padding: 1rem 2rem; font-size: 1rem; }
+    .btn-full { width: 100%; justify-content: center; }
+
+    @media (min-width: 768px) {
+      .menu-toggle { display: none; }
+      .navbar-menu { display: flex; align-items: center; }
+    }
+    @media (max-width: 767px) {
+      .navbar-menu { display: flex; position: fixed; top: 0; right: 0; width: min(300px, 85vw); height: 100vh; background: var(--card); flex-direction: column; justify-content: center; align-items: center; gap: 1.5rem; box-shadow: -4px 0 24px rgba(0,0,0,0.12); padding: 5rem 1.5rem 2rem; transform: translateX(100%); transition: transform 0.3s ease; z-index: 1000; }
+      .navbar-menu.is-open { transform: translateX(0); }
+      .navbar-menu .nav-link { font-size: 1.1rem; padding: 0.5rem 1rem; min-height: 44px; display: inline-flex; align-items: center; border-radius: 0.5rem; }
+      .nav-cta { display: inline-flex; margin-top: 0.5rem; }
+    }
+    .nav-overlay { position: fixed; inset: 0; background: rgba(19,43,74,0.4); z-index: 999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .nav-overlay.is-visible { opacity: 1; pointer-events: auto; }
+    section[id] { scroll-margin-top: 6rem; }
+
+    /* HERO */
+    .hero { position: relative; overflow: hidden; min-height: 78vh; display: flex; align-items: center; margin-top: 5rem; }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .hero-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(115deg, rgba(21,45,79,0.92) 18%, rgba(21,45,79,0.65) 45%, rgba(43,181,196,0.28) 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2.5rem; align-items: center; padding: 5rem 0; }
+    .hero-content { color: var(--primary-fg); }
+    .hero-badge { display: inline-flex; padding: 0.5rem 1rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.15); font-size: 0.875rem; font-weight: 600; backdrop-filter: blur(8px); margin-bottom: 1.5rem; }
+    .hero-title { font-size: clamp(2.25rem, 5vw, 3.75rem); max-width: 720px; margin-bottom: 1.5rem; }
+    .hero-title span { display: block; background: linear-gradient(90deg, var(--gold), var(--cyan), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-desc { max-width: 600px; font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 2rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    /* CARD */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .card-header { padding: 1.5rem 1.5rem 0.5rem; }
+    .card-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .card-desc { color: var(--muted-fg); font-size: 0.875rem; }
+    .card-body { padding: 1rem 1.5rem 1.5rem; }
+
+    .hero-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); }
+    .impact-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border: 1px solid var(--border); border-radius: calc(var(--radius) - 2px); font-size: 0.875rem; margin-bottom: 0.5rem; }
+    .impact-item svg { flex-shrink: 0; color: var(--gold); margin-top: 2px; }
+
+    /* SECTIONS */
+    .section { padding: 5rem 0; }
+    .section-alt { background: rgba(226,232,240,0.4); }
+    .section-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-size: clamp(1.75rem, 3vw, 2.5rem); max-width: 600px; margin-bottom: 1rem; }
+    .section-desc { color: var(--muted-fg); max-width: 600px; }
+    .section-header { margin-bottom: 3rem; }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .service-card .card-title { font-size: 1.5rem; }
+    .service-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; }
+    .service-list li { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .service-list svg { flex-shrink: 0; color: var(--cyan); margin-top: 2px; }
+
+    /* DIFFERENTIATORS */
+    .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .diff-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--muted); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--navy); }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; margin-bottom: 1.5rem; }
+    .contact-info p { display: flex; align-items: center; gap: 0.5rem; }
+    .contact-info svg { color: var(--gold); flex-shrink: 0; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.375rem; }
+    .form-group.full { grid-column: span 2; }
+    .form-label { font-size: 0.875rem; font-weight: 500; }
+    .form-input, .form-textarea { padding: 0.625rem 0.875rem; border: 1px solid var(--border); border-radius: calc(var(--radius) - 2px); font-family: var(--font-body); font-size: 0.875rem; background: var(--bg); color: var(--fg); outline: none; transition: border-color 0.2s; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--primary); }
+    .form-textarea { min-height: 80px; resize: vertical; }
+    .form-submit { grid-column: span 2; margin-top: 0.5rem; }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--border); background: var(--card); padding: 2.5rem 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; font-size: 0.875rem; color: var(--muted-fg); }
+    .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-logo { height: 6.5rem; width: auto; object-fit: contain; }
+    .footer-logo-texto { height: 4.5rem; width: auto; object-fit: contain; }
+
+    /* SVG inline icons */
+    .icon { width: 16px; height: 16px; display: inline-block; vertical-align: middle; }
+    .icon-lg { width: 24px; height: 24px; }
+
+    /* RESPONSIVE */
+    @media (min-width: 640px) {
+      .logo-image { height: 7.5rem; }
+      .logo-texto-image { height: 5.25rem; }
+      .footer-logo { height: 7.5rem; }
+      .footer-logo-texto { height: 5.25rem; }
+    }
+    @media (min-width: 1024px) {
+      .navbar-content { padding: 1.25rem 0; }
+      .logo-image { height: 9rem; }
+      .logo-texto-image { height: 6rem; }
+      .footer-logo { height: 9rem; }
+      .footer-logo-texto { height: 6rem; }
+    }
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card-wrap { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .diff-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .diff-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full, .form-submit { grid-column: span 1; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+      .container { padding: 0 1.25rem; }
+    }
+  </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
 
-    <!-- Navigation -->
-    <nav class="navbar" aria-label="Navegação principal">
-        <div class="container navbar-content">
-            <a href="#" class="navbar-brand" aria-label="MLS Sistemas - Página inicial">
-                <img src="assets/img/mls-sistemas-logo.png" alt="" class="logo-image">
-                <img src="assets/img/mls-sistemas-texto.png" alt="MLS Sistemas" class="logo-texto-image">
+  <!-- NAVBAR (igual ao index.html) -->
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="container navbar-content">
+      <a href="#inicio" class="navbar-brand" aria-label="MLS Sistemas - Página inicial">
+        <img src="assets/img/mls-sistemas-logo.png" alt="" class="logo-image" />
+        <img src="assets/img/mls-sistemas-texto.png" alt="MLS Sistemas Automatizados" class="logo-texto-image" />
+      </a>
+      <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar-menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <div id="navbar-menu" class="navbar-menu" role="navigation" aria-label="Menu de navegação">
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#diferenciais" class="nav-link">Diferenciais</a>
+        <a href="#contato" class="nav-link">Contato</a>
+        <a href="https://wa.me/5511993621054?text=Ol%C3%A1%2C%20equipe%20MLS%20Sistemas%20Automatizados!" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">Falar com Especialista</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <img src="assets/img/mls-hero-bg.webp" alt="Fundo tecnológico com elementos de automação digital" class="hero-bg" loading="eager" />
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-badge">Tecnologia para eficiência e escala</p>
+          <h1 class="hero-title">
+            Transforme processos em crescimento com
+            <span>automação inteligente</span>
+          </h1>
+          <p class="hero-desc">
+            A MLS Sistemas Automatizados cria soluções sob medida para simplificar operações, reduzir desperdícios e aumentar produtividade com tecnologia aplicada ao seu contexto real.
+          </p>
+          <div class="hero-actions">
+            <a href="https://wa.me/5511993621054?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico." target="_blank" rel="noreferrer" class="btn btn-secondary btn-lg">
+              Solicitar Diagnóstico
+              <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-
-            <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar-menu">
-                <span class="menu-toggle-bar"></span>
-                <span class="menu-toggle-bar"></span>
-                <span class="menu-toggle-bar"></span>
-            </button>
-
-            <div id="navbar-menu" class="navbar-menu" role="navigation" aria-label="Menu de navegação">
-                <a href="#servicos" class="nav-link">Serviços</a>
-                <a href="#diferenciais" class="nav-link">Por que MLS</a>
-                <a href="#contato" class="nav-link">Contato</a>
-                <a href="#contato" class="btn btn-primary btn-sm nav-cta">Solicitar Demo</a>
-            </div>
+            <a href="#servicos" class="btn btn-outline btn-lg">Ver Soluções</a>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <main id="main-content">
-    <section class="hero" aria-label="Apresentação">
-        <div class="hero-background" style="background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663082981144/Gu86AHPwKXxwn3XSUBsNrF/mls_hero_bg-4gGyR3MBqdvEi9axmytjdv.webp');"></div>
-        <div class="hero-overlay"></div>
-        
-        <div class="container hero-content">
-            <div class="hero-text fade-in-up">
-                <h1 class="hero-title">
-                    Transforme seu Negócio com
-                    <span class="gradient-text">Automação Inteligente</span>
-                </h1>
-                
-                <p class="hero-subtitle">
-                    Sistemas customizados em PHP e automação com IA para impulsionar sua eficiência operacional e crescimento empresarial.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#contato" class="btn btn-primary btn-lg">
-                        Começar Agora
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    <a href="#servicos" class="btn btn-outline btn-lg">
-                        Saiba Mais
-                    </a>
-                </div>
+        <div class="hero-card-wrap">
+          <div class="card hero-card">
+            <div class="card-header">
+              <h2 class="card-title">Impacto em foco</h2>
+              <p class="card-desc">Projetos desenhados para melhorar indicadores operacionais e acelerar decisões.</p>
             </div>
+            <div class="card-body">
+              <div class="impact-item">
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>+35% produtividade média por equipe</span>
+              </div>
+              <div class="impact-item">
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Até 40% de redução em tarefas manuais</span>
+              </div>
+              <div class="impact-item">
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Implantação com acompanhamento consultivo</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicos" class="services">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Nossos Serviços</h2>
-                <p>Soluções completas de tecnologia para empresas que buscam inovação e eficiência</p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Service Card 1 -->
-                <div class="service-card fade-in-left">
-                    <div class="service-icon floating">
-                        <i class="fas fa-code"></i>
-                    </div>
-
-                    <h3>Sistemas Customizados</h3>
-                    <p>Desenvolvemos WebApps robustos e escaláveis em PHP, adaptados às necessidades específicas do seu negócio.</p>
-
-                    <ul class="service-features">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Arquitetura escalável</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Performance otimizada</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Segurança em primeiro lugar</span>
-                        </li>
-                    </ul>
-
-                    <button class="btn btn-outline">
-                        Conhecer Mais
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="service-card fade-in-right">
-                    <div class="service-icon floating" style="animation-delay: 0.5s;">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-
-                    <h3>Automação com IA</h3>
-                    <p>Automatizamos seus processos com inteligência artificial usando Python, reduzindo custos e aumentando produtividade.</p>
-
-                    <ul class="service-features">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Redução de custos operacionais</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Processamento inteligente</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Integração com sistemas existentes</span>
-                        </li>
-                    </ul>
-
-                    <button class="btn btn-outline">
-                        Conhecer Mais
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Serviços</p>
+          <h2 class="section-title">Soluções digitais orientadas a resultado</h2>
+          <p class="section-desc">Estruturamos tecnologia com visão de negócio para eliminar gargalos e escalar operação com previsibilidade.</p>
         </div>
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="card service-card">
+            <div class="card-header">
+              <h3 class="card-title">Sistemas Sob Medida</h3>
+              <p class="card-desc">WebApps personalizados com arquitetura robusta para integrar setores, reduzir retrabalho e acelerar operação.</p>
+            </div>
+            <div class="card-body">
+              <ul class="service-list">
+                <li>
+                  <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Mapeamento completo do fluxo</span>
+                </li>
+                <li>
+                  <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Escalabilidade para crescimento</span>
+                </li>
+                <li>
+                  <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Segurança e performance de ponta</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Service 2 -->
+          <div class="card service-card">
+            <div class="card-header">
+              <h3 class="card-title">Automação Inteligente com IA</h3>
+              <p class="card-desc">Automatizamos tarefas repetitivas e decisões operacionais para ganhar velocidade, previsibilidade e margem.</p>
+            </div>
+            <div class="card-body">
+              <ul class="service-list">
+                <li>
+                  <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Integração com ferramentas atuais</span>
+                </li>
+                <li>
+                  <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Redução de custo operacional</span>
+                </li>
+                <li>
+                  <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Dados em tempo real para decisão</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Differentials Section -->
-    <section id="diferenciais" class="differentials">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Por que escolher MLS?</h2>
-                <p>Expertise técnica combinada com foco em resultados para seu negócio</p>
-            </div>
-
-            <div class="differentials-grid">
-                <div class="differential-card fade-in" style="animation-delay: 0s;">
-                    <div class="differential-icon">🎯</div>
-                    <h3>Expertise Técnica</h3>
-                    <p>Equipe especializada em PHP, Python e arquitetura de sistemas</p>
-                </div>
-
-                <div class="differential-card fade-in" style="animation-delay: 0.2s;">
-                    <div class="differential-icon">⚙️</div>
-                    <h3>Soluções Customizadas</h3>
-                    <p>Cada projeto é único e desenvolvido conforme suas necessidades</p>
-                </div>
-
-                <div class="differential-card fade-in" style="animation-delay: 0.4s;">
-                    <div class="differential-icon">📈</div>
-                    <h3>ROI Comprovado</h3>
-                    <p>Aumentamos eficiência e reduzimos custos operacionais</p>
-                </div>
-            </div>
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Por que MLS</p>
+          <h2 class="section-title">Mais que desenvolvimento: parceria de crescimento</h2>
         </div>
+        <div class="diff-grid">
+          <div class="card">
+            <div class="card-header">
+              <div class="diff-icon">
+                <svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <h3 class="card-title" style="font-size:1.25rem;">Estratégia + Execução</h3>
+              <p class="card-desc">Começamos pelo objetivo de negócio e entregamos solução técnica orientada a resultado.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="diff-icon">
+                <svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5m-4.75-11.396c.251.023.501.05.75.082M12 21a9 9 0 100-18 9 9 0 000 18z"/></svg>
+              </div>
+              <h3 class="card-title" style="font-size:1.25rem;">Especialistas em Automação</h3>
+              <p class="card-desc">Time focado em processos empresariais, IA aplicada e integrações entre sistemas críticos.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="diff-icon">
+                <svg class="icon-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="card-title" style="font-size:1.25rem;">ROI Mensurável</h3>
+              <p class="card-desc">Projetos desenhados para reduzir custos, aumentar produtividade e gerar retorno rápido.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="contato" class="cta">
-        <div class="container">
-            <div class="cta-content fade-in">
-                <h2>Pronto para transformar seu negócio?</h2>
-                <p>Entre em contato conosco para uma consultoria gratuita e descubra como podemos ajudar sua empresa.</p>
-
-                <div class="cta-buttons">
-                    <a href="https://wa.me/5511993621054?text=Quero%20falar%20com%20um%20especialista%20da%20MLS%20Sistemas" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-                        Solicitar Consultoria
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+      <div class="container contact-grid">
+        <div class="card" style="height:fit-content;">
+          <div class="card-header">
+            <h2 class="card-title" style="font-size:1.85rem;">Vamos mapear sua oportunidade?</h2>
+            <p class="card-desc">Preencha os dados e receba um contato consultivo para identificar ganhos rápidos de eficiência.</p>
+          </div>
+          <div class="card-body">
+            <div class="contact-info">
+              <p>
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                WhatsApp: (11) 99362-1054
+              </p>
+              <p>
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                E-mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9bab6b7adb8adb699b4b5aaaab0aaadbcb4b8aaf7bab6b4f7bbab">[email&#160;protected]</a>
+              </p>
+              <p>
+                <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Atendimento remoto e presencial sob demanda
+              </p>
             </div>
+            <a href="https://wa.me/5511993621054?text=Ol%C3%A1%2C%20gostaria%20de%20iniciar%20uma%20conversa." target="_blank" rel="noreferrer" class="btn btn-primary btn-lg btn-full">
+              Iniciar conversa agora
+              <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
+
+        <div class="card" style="box-shadow:var(--shadow);">
+          <div class="card-header">
+            <h2 class="card-title">Solicite uma análise gratuita</h2>
+            <p class="card-desc">Quanto melhor o contexto, mais assertiva será a proposta inicial.</p>
+          </div>
+          <div class="card-body">
+            <form class="form-grid" id="leadForm" onsubmit="return false;">
+              <div class="form-group">
+                <label class="form-label" for="nome">Nome</label>
+                <input class="form-input" id="nome" placeholder="Seu nome" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="empresa">Empresa</label>
+                <input class="form-input" id="empresa" placeholder="Nome da empresa" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">E-mail</label>
+                <input class="form-input" id="email" type="email" placeholder="voce@empresa.com" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="telefone">Telefone</label>
+                <input class="form-input" id="telefone" placeholder="(11) 99999-9999" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="desafio">Principal desafio hoje</label>
+                <textarea class="form-textarea" id="desafio" placeholder="Descreva o processo que você quer otimizar"></textarea>
+              </div>
+              <div class="form-submit">
+                <a id="whatsappBtn" href="#" target="_blank" rel="noreferrer" class="btn btn-primary btn-lg btn-full" onclick="sendWhatsApp(event)">
+                  Enviar dados via WhatsApp
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>MLS Sistemas</h4>
-                    <p>Transformando negócios através de tecnologia e automação.</p>
-                </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">
+        <img src="assets/img/mls-sistemas-logo.png" alt="" class="footer-logo" loading="lazy" />
+        <img src="assets/img/mls-sistemas-texto.png" alt="MLS Sistemas Automatizados" class="footer-logo-texto" loading="lazy" />
+      </span>
+      <p>&copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> MLS Sistemas Automatizados. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-                <div class="footer-column">
-                    <h4>Serviços</h4>
-                    <ul>
-                        <li><a href="#servicos">Sistemas Customizados</a></li>
-                        <li><a href="#servicos">Automação com IA</a></li>
-                    </ul>
-                </div>
+  <script>
+    // Menu mobile (igual ao index.html)
+    (function() {
+      var menuToggle = document.querySelector('.menu-toggle');
+      var navbarMenu = document.getElementById('navbar-menu');
+      if (menuToggle && navbarMenu) {
+        var overlay = null;
+        function openMenu() {
+          navbarMenu.classList.add('is-open');
+          menuToggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+          if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.setAttribute('aria-hidden', 'true');
+            overlay.className = 'nav-overlay';
+            overlay.addEventListener('click', closeMenu);
+            document.body.appendChild(overlay);
+          }
+          overlay.classList.add('is-visible');
+        }
+        function closeMenu() {
+          navbarMenu.classList.remove('is-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          if (overlay) overlay.classList.remove('is-visible');
+        }
+        menuToggle.addEventListener('click', function() {
+          if (navbarMenu.classList.contains('is-open')) closeMenu();
+          else openMenu();
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && navbarMenu.classList.contains('is-open')) closeMenu();
+        });
+      }
+      // Smooth scroll com offset para navbar fixa + fechar menu ao clicar em link
+      var NAVBAR_OFFSET = 90;
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href === '#') return;
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) {
+            var top = target.getBoundingClientRect().top + window.pageYOffset - NAVBAR_OFFSET;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+            if (navbarMenu.classList.contains('is-open')) closeMenu();
+          }
+        });
+      });
+      // Sombra na navbar ao rolar
+      var navbar = document.querySelector('.navbar');
+      if (navbar) {
+        window.addEventListener('scroll', function() {
+          navbar.style.boxShadow = window.pageYOffset > 100 ? '0 2px 16px rgba(0,0,0,0.1)' : 'none';
+        });
+      }
+    })();
 
-                <div class="footer-column">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Contato</a></li>
-                    </ul>
-                </div>
+    function sendWhatsApp(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value || 'Não informado';
+      const empresa = document.getElementById('empresa').value || 'Não informado';
+      const email = document.getElementById('email').value || 'Não informado';
+      const telefone = document.getElementById('telefone').value || 'Não informado';
+      const desafio = document.getElementById('desafio').value || 'Não informado';
 
-                <div class="footer-column">
-                    <h4>Contato</h4>
-                    <p><a href="https://wa.me/5511993621054" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                </div>
-            </div>
+      const msg = [
+        'Olá, equipe MLS Sistemas Automatizados!',
+        'Nome: ' + nome,
+        'Empresa: ' + empresa,
+        'Email: ' + email,
+        'Telefone: ' + telefone,
+        'Desafio principal: ' + desafio
+      ].join('\n');
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 MLS Sistemas Automatizados. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-    </main>
-
-    <script src="script.js"></script>
+      window.open('https://wa.me/5511993621054?text=' + encodeURIComponent(msg), '_blank');
+    }
+  </script>
 </body>
 </html>

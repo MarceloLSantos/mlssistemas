@@ -3,24 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Evitar cache da página: forçar recarga no mobile e sempre buscar HTML atualizado -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <!-- Versão dos assets: altere o valor em todos os ?v= ao publicar (ex: 20250314) para forçar atualização -->
   <title>Sistemas Customizados e Automação com IA para Empresas | MLS Sistemas</title>
-  <meta name="description" content="Sistemas sob medida em PHP e automação com IA em Python. Desenvolvimento de sistemas customizados e automação de processos para sua empresa. Consultoria gratuita." />
+  <meta name="description" content="Sistemas sob medida e automação aplicando Engenharia de IA. Desenvolvimento de sistemas customizados e automação de processos para sua empresa. Consultoria gratuita." />
   <meta name="keywords" content="sistemas customizados, automação com IA, automação inteligente, desenvolvimento de sistemas, sistemas sob medida, automação de processos, PHP, Python, WebApps, inteligência artificial empresas" />
   <meta name="author" content="MLS Sistemas Automatizados" />
   <meta name="robots" content="index, follow" />
   <!-- Quando publicar, adicione: <link rel="canonical" href="https://SEU-DOMINIO.com/" /> e use URLs absolutas em og:url e og:image -->
   <meta property="og:title" content="Sistemas Customizados e Automação com IA | MLS Sistemas" />
-  <meta property="og:description" content="Sistemas sob medida em PHP e automação com IA. Desenvolvimento e automação de processos para empresas. Consultoria gratuita." />
+  <meta property="og:description" content="Sistemas sob medida e automação com IA. Desenvolvimento e automação de processos para empresas. Consultoria gratuita." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/mls-sistemas-logo.png" />
+  <meta property="og:image" content="assets/img/mls-sistemas-logo.png?v=20250313" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="MLS Sistemas Automatizados" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sistemas Customizados e Automação com IA | MLS Sistemas" />
   <meta name="twitter:description" content="Sistemas sob medida e automação com IA para empresas. Consultoria gratuita." />
-  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" href="favicon.ico?v=20250313" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fontes: preload + stylesheet no head para encurtar a cadeia crítica (evitar esperar script) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" as="style" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -48,7 +56,8 @@
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-    body { font-family: var(--font-body); background: var(--bg); color: var(--fg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--fg); -webkit-font-smoothing: antialiased; line-height: 1.6; opacity: 0; transition: opacity 1s ease-out; }
+    body.page-loaded { opacity: 1; }
     h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.15; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
@@ -264,6 +273,7 @@
     .hero-actions .btn { transition: transform 0.25s ease; }
     .hero-actions .btn:hover { transform: translateY(-3px); }
     @media (prefers-reduced-motion: reduce) {
+      body { opacity: 1; transition: none; }
       .hero-badge, .hero-card, .diff-icon, .service-icon-wrap, .impact-item svg, .cta-buttons .btn { animation: none; }
       .service-card:hover .service-icon-wrap { animation: none; }
     }
@@ -317,7 +327,7 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "MLS Sistemas Automatizados",
-    "description": "Sistemas customizados em PHP e automação com IA em Python para empresas. Desenvolvimento de WebApps sob medida e automação de processos.",
+    "description": "Sistemas customizados e automação aplicando Engenharia de IA para empresas. Desenvolvimento de WebApps sob medida e automação de processos.",
     "url": "https://mlssistemas.com.br",
     "serviceType": ["Sistemas Customizados", "Automação com IA", "Desenvolvimento de Software"],
     "areaServed": { "@type": "Country", "name": "Brasil" }
@@ -326,12 +336,16 @@
 </head>
 <body>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() { document.body.classList.add('page-loaded'); });
+  </script>
+
   <!-- NAVBAR (igual ao index.html) -->
   <nav class="navbar" aria-label="Navegação principal">
     <div class="container navbar-content">
       <a href="#inicio" class="navbar-brand" aria-label="MLS Sistemas - Página inicial">
-        <img src="assets/img/mls-sistemas-logo.png" alt="Logo MLS Sistemas - Sistemas customizados e automação com IA" class="logo-image" />
-        <img src="assets/img/mls-sistemas-texto.png" alt="MLS Sistemas Automatizados" class="logo-texto-image" />
+        <img src="assets/img/mls-sistemas-logo.png?v=20250313" alt="Logo MLS Sistemas - Sistemas customizados e automação com IA" class="logo-image" />
+        <img src="assets/img/mls-sistemas-texto.png?v=20250313" alt="MLS Sistemas Automatizados" class="logo-texto-image" />
       </a>
       <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar-menu">
         <span class="menu-toggle-bar"></span>
@@ -351,7 +365,7 @@
   <main id="main-content" role="main">
     <!-- HERO -->
     <section id="inicio" class="hero">
-      <img src="assets/img/mls-hero-bg.webp" alt="Sistemas customizados e automação com inteligência artificial para empresas" class="hero-bg" loading="eager" />
+      <img src="assets/img/mls-hero-bg.jpg?v=20250313" alt="Sistemas customizados e automação com inteligência artificial para empresas" class="hero-bg" loading="eager" fetchpriority="high" />
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-content">
@@ -361,14 +375,13 @@
             <span>automação inteligente</span> para sua empresa
           </h1>
           <p class="hero-desc">
-            Desenvolvimento de sistemas sob medida em PHP e automação de processos com IA em Python. A MLS Sistemas cria soluções customizadas para simplificar operações, reduzir custos e aumentar produtividade no seu negócio.
+            Desenvolvimento de sistemas sob medida e automação de processos aplicando Engenharia de IA. A MLS Sistemas cria soluções customizadas para simplificar operações, reduzir custos e aumentar produtividade no seu negócio.
           </p>
           <div class="hero-actions">
             <a href="https://wa.me/5511993621054?text=Quero%20falar%20com%20um%20especialista%20da%20MLS%20Sistemas" target="_blank" rel="noreferrer" class="btn btn-secondary btn-lg">
-              Solicitar Diagnóstico
+              Solicitar Consultoria
               <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#servicos" class="btn btn-outline btn-lg">Ver Soluções</a>
           </div>
         </div>
         <div class="hero-card-wrap">
@@ -412,7 +425,7 @@
                 <svg class="icon-xl" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8M12 3v18"/></svg>
               </div>
               <h3 class="card-title">Sistemas customizados e WebApps</h3>
-              <p class="card-desc">Desenvolvimento de sistemas sob medida em PHP: WebApps personalizados com arquitetura robusta para integrar setores, reduzir retrabalho e acelerar operação.</p>
+              <p class="card-desc">Desenvolvimento de sistemas sob medida: WebApps personalizados com arquitetura robusta para integrar setores, reduzir retrabalho e acelerar operação.</p>
             </div>
             <div class="card-body">
               <ul class="service-list">
@@ -437,8 +450,8 @@
               <div class="service-icon-wrap" aria-hidden="true">
                 <svg class="icon-xl" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               </div>
-              <h3 class="card-title">Automação de processos com IA</h3>
-              <p class="card-desc">Automação com inteligência artificial em Python: tarefas repetitivas e decisões operacionais automatizadas para ganhar velocidade, previsibilidade e margem.</p>
+              <h3 class="card-title">Automação de processos com Engenharia de IA</h3>
+              <p class="card-desc">Automação com inteligência artificial e Python: tarefas repetitivas e decisões operacionais automatizadas para ganhar velocidade, previsibilidade e margem.</p>
             </div>
             <div class="card-body">
               <ul class="service-list">
@@ -466,7 +479,7 @@
       <div class="container">
         <div class="section-header">
           <p class="section-label">Por que MLS</p>
-          <h2 class="section-title">Especialistas em sistemas customizados e automação com IA</h2>
+          <h2 class="section-title">Especialista em sistemas customizados e automação com Engenharia de IA</h2>
         </div>
         <div class="diff-grid">
           <div class="card">
@@ -510,7 +523,7 @@
         </div>
         <div class="cases-grid">
           <article class="card case-card">
-            <img src="assets/img/rodebem-thumb.png" alt="Preview do site RodeBem — gestão para locadoras de veículos" class="case-thumb" width="400" height="180" loading="lazy" />
+            <img src="assets/img/rodebem-thumb.png?v=20250313" alt="Preview do site RodeBem — gestão para locadoras de veículos" class="case-thumb" width="400" height="180" loading="lazy" />
             <div class="card-header">
               <span class="case-badge">Locação de veículos</span>
               <h3 class="card-title">RodeBem</h3>
@@ -518,11 +531,11 @@
             </div>
             <div class="card-body">
               <p class="card-desc" style="margin-bottom:1rem;">Landing page e sistema de gestão desenvolvidos pela MLS Sistemas.</p>
-              <a href="https://rodebem.app.br/landing" target="_blank" rel="noopener noreferrer" class="case-link">Conhecer o RodeBem <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              <a href="https://rodebem.app.br/" target="_blank" rel="noopener noreferrer" class="case-link">Conhecer o RodeBem <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
             </div>
           </article>
           <article class="card case-card">
-            <img src="assets/img/restaurantes-thumb.png" alt="Preview do site Sistema Restaurantes — cardápio digital e gestão" class="case-thumb" width="400" height="180" loading="lazy" />
+            <img src="assets/img/restaurantes-thumb.png?v=20250313" alt="Preview do site Sistema Restaurantes — cardápio digital e gestão" class="case-thumb" width="400" height="180" loading="lazy" />
             <div class="card-header">
               <span class="case-badge">Restaurantes e bares</span>
               <h3 class="card-title">Sistema Restaurantes</h3>
@@ -530,11 +543,11 @@
             </div>
             <div class="card-body">
               <p class="card-desc" style="margin-bottom:1rem;">Landing page e sistema completo desenvolvidos pela MLS Sistemas.</p>
-              <a href="https://restaurantes.app.br/saiba-mais" target="_blank" rel="noopener noreferrer" class="case-link">Conhecer o Restaurantes <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              <a href="https://restaurantes.app.br/" target="_blank" rel="noopener noreferrer" class="case-link">Conhecer o Restaurantes <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
             </div>
           </article>
           <article class="card case-card">
-            <img src="assets/img/idreams-thumb.png" alt="Preview do site iDreams — loja de iPhone e produtos Apple" class="case-thumb" width="400" height="180" loading="lazy" />
+            <img src="assets/img/idreams-thumb.png?v=20250313" alt="Preview do site iDreams — loja de iPhone e produtos Apple" class="case-thumb" width="400" height="180" loading="lazy" />
             <div class="card-header">
               <span class="case-badge">E-commerce / Loja</span>
               <h3 class="card-title">iDreams</h3>
@@ -634,6 +647,7 @@
         });
       }
       // Smooth scroll com offset para navbar fixa + fechar menu ao clicar em link
+      // Leituras de layout primeiro, depois alterações DOM, para evitar reflow forçado
       var NAVBAR_OFFSET = 90;
       document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
@@ -643,27 +657,28 @@
           var target = document.querySelector(href);
           if (target) {
             var top = target.getBoundingClientRect().top + window.pageYOffset - NAVBAR_OFFSET;
-            window.scrollTo({ top: top, behavior: 'smooth' });
-            if (navbarMenu.classList.contains('is-open')) closeMenu();
+            if (navbarMenu && navbarMenu.classList.contains('is-open')) closeMenu();
+            requestAnimationFrame(function() {
+              window.scrollTo({ top: top, behavior: 'smooth' });
+            });
           }
         });
       });
-      // Sombra na navbar ao rolar
+      // Sombra na navbar ao rolar (requestAnimationFrame evita reflow forçado no scroll)
       var navbar = document.querySelector('.navbar');
       if (navbar) {
+        var scrollTicking = false;
         window.addEventListener('scroll', function() {
-          navbar.style.boxShadow = window.pageYOffset > 100 ? '0 2px 16px rgba(0,0,0,0.1)' : 'none';
-        });
+          if (!scrollTicking) {
+            requestAnimationFrame(function() {
+              var y = window.pageYOffset || document.documentElement.scrollTop;
+              navbar.style.boxShadow = y > 100 ? '0 2px 16px rgba(0,0,0,0.1)' : 'none';
+              scrollTicking = false;
+            });
+            scrollTicking = true;
+          }
+        }, { passive: true });
       }
-    })();
-  </script>
-  <!-- Google Fonts injetado após o parse: não bloqueia a renderização (LCP) -->
-  <script>
-    (function() {
-      var l = document.createElement('link');
-      l.rel = 'stylesheet';
-      l.href = 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap';
-      document.head.appendChild(l);
     })();
   </script>
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" /></noscript>

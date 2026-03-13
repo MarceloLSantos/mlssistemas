@@ -1,3 +1,30 @@
+# Evitar cache do HTML para sempre servir a página atualizada (incl. mobile)
+<IfModule mod_headers.c>
+  # Todas as páginas HTML
+  <FilesMatch "\.(html|htm)$">
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+    Header always set Vary "*"
+  </FilesMatch>
+  # index.html explicitamente (quando acessam / ou index.html)
+  <Files "index.html">
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+    Header always set Vary "*"
+  </Files>
+</IfModule>
+# Forçar recarga quando acessam a raiz do site (evita cache no mobile)
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "^/?$" NO_CACHE
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0" env=NO_CACHE
+  Header always set Pragma "no-cache" env=NO_CACHE
+  Header always set Expires "0" env=NO_CACHE
+</IfModule>
+
 # Ciclos de vida de cache para melhorar LCP em visitas repetidas (PageSpeed Insights)
 # Requer mod_expires. No XAMPP/Apache costuma vir ativo.
 

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-custom-css"></style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLS TraderBots | Automação de Trade na B3 e Criptoativos</title>
+  <meta name="description" content="Automatize suas estratégias de Day Trade e Swing Trade na B3 e Binance. Bots para Profit Pro, Profit Ultra e Black Arrow.">
+  <meta name="author" content="MLS TraderBots">
+  <meta property="og:title" content="MLS TraderBots | Automação de Trade">
+  <meta property="og:description" content="Automatize suas estratégias de Day Trade e Swing Trade na B3 e Binance.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="../assets/css/styles.css" rel="stylesheet">
+
+</head>
+<body cz-shortcut-listen="true">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container inner">
+      <a href="#" class="logo">
+        <span class="logo-text text-gold">MLS</span>
+        <span style="font-size:0.875rem; font-weight:500;">TraderBots</span>
+      </a>
+      <div class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <button class="mobile-toggle" onclick="document.getElementById(&#39;mobileMenu&#39;).classList.toggle(&#39;open&#39;)" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#servicos" onclick="document.getElementById(&#39;mobileMenu&#39;).classList.remove(&#39;open&#39;)">Serviços</a>
+      <a href="#contato" onclick="document.getElementById(&#39;mobileMenu&#39;).classList.remove(&#39;open&#39;)">Contato</a>
+    </div>
+  </nav>
+
+  <!-- MAIN WRAPPER -->
+  <div style="padding-top:64px;" class="anim-page">
+
+    <!-- TICKER BAR -->
+    <div class="ticker-bar">
+      <div class="ticker-track anim-ticker">
+        <div class="ticker-item"><span class="ticker-symbol">PETR4</span><span class="ticker-price">38.42</span><span class="ticker-up">+1.2%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">VALE3</span><span class="ticker-price">62.15</span><span class="ticker-down">-0.8%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">ITUB4</span><span class="ticker-price">34.70</span><span class="ticker-up">+0.5%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">BBDC4</span><span class="ticker-price">14.23</span><span class="ticker-up">+1.8%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">WEGE3</span><span class="ticker-price">35.90</span><span class="ticker-up">+2.1%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">BTC/USDT</span><span class="ticker-price">67,450</span><span class="ticker-up">+3.4%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">ETH/USDT</span><span class="ticker-price">3,520</span><span class="ticker-up">+1.9%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">ABEV3</span><span class="ticker-price">12.85</span><span class="ticker-down">-0.3%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">MGLU3</span><span class="ticker-price">9.74</span><span class="ticker-up">+4.2%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">B3SA3</span><span class="ticker-price">11.56</span><span class="ticker-up">+0.7%</span></div>
+        <!-- duplicated for seamless loop -->
+        <div class="ticker-item"><span class="ticker-symbol">PETR4</span><span class="ticker-price">38.42</span><span class="ticker-up">+1.2%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">VALE3</span><span class="ticker-price">62.15</span><span class="ticker-down">-0.8%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">ITUB4</span><span class="ticker-price">34.70</span><span class="ticker-up">+0.5%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">BBDC4</span><span class="ticker-price">14.23</span><span class="ticker-up">+1.8%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">WEGE3</span><span class="ticker-price">35.90</span><span class="ticker-up">+2.1%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">BTC/USDT</span><span class="ticker-price">67,450</span><span class="ticker-up">+3.4%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">ETH/USDT</span><span class="ticker-price">3,520</span><span class="ticker-up">+1.9%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">ABEV3</span><span class="ticker-price">12.85</span><span class="ticker-down">-0.3%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">MGLU3</span><span class="ticker-price">9.74</span><span class="ticker-up">+4.2%</span></div>
+        <div class="ticker-item"><span class="ticker-symbol">B3SA3</span><span class="ticker-price">11.56</span><span class="ticker-up">+0.7%</span></div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-line"></div>
+      <div class="container" style="position:relative;z-index:10;">
+        <div class="hero-grid-layout">
+          <!-- Left -->
+          <div class="space-y-8" style="opacity:0;animation:slideLeft 0.8s ease-out 0.3s forwards;">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span style="color:var(--muted-fg);">Plataformas Profit Pro • Profit Ultra • Black Arrow</span>
+            </div>
+            <h1>
+              <span>Automatize sua</span><br>
+              <span class="text-gold">Estratégia de Trade</span>
+            </h1>
+            <p class="hero-desc">
+              Aumente o potencial das suas operações no <strong>Day Trade</strong> e
+              <strong>Swing Trade</strong> operando de forma 100% automatizada nos ativos da B3 no PROFIT e Criptoativos na Binance.
+            </p>
+            <div class="flex-wrap">
+              <a href="#contato" class="btn-gold btn-gold-lg anim-pulse-glow">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+                Solicitar Orçamento
+              </a>
+              <a href="#servicos" class="btn-outline">
+                Conheça os Serviços
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+            </div>
+          </div>
+          <!-- Right -->
+          <div style="opacity:0;animation:slideRight 0.8s ease-out 0.5s forwards;position:relative;">
+            <div class="hero-img-wrapper shadow-card glow-gold">
+              <img src="../assets/img/profit-2.png" alt="Plataforma Profit com bot de trading automatizado">
+              <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
+                <div class="hero-scan anim-line-scan"></div>
+              </div>
+            </div>
+            <div class="hero-floating-badge shadow-card anim-float">
+              <span class="hero-floating-dot"></span>
+              <span style="font-size:0.875rem;font-weight:500;">Bot Ativo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats reveal" id="stats">
+      <div class="container">
+        <div class="stats-grid" id="statsGrid">
+          <div style="opacity:0;"><div class="stat-value text-gold">24/7</div><div class="stat-label">Operação Contínua</div><div class="stat-desc">Seus bots nunca dormem</div></div>
+          <div style="opacity:0;"><div class="stat-value text-gold">100%</div><div class="stat-label">Automatizado</div><div class="stat-desc">Sem interferência emocional</div></div>
+          <div style="opacity:0;"><div class="stat-value text-gold">Profit + Binance</div><div class="stat-label">Multi-Mercado</div><div class="stat-desc">B3 e Criptoativos</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services reveal" id="servicos">
+      <div class="container">
+        <div class="section-header">
+          <h2><span class="text-gold">O que Desenvolvemos</span></h2>
+          <p>Soluções completas para automatizar suas operações pelo PROFIT na B3 e no mercado de criptoativos na BINANCE.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+          <div class="service-card" style="opacity:0;"><div class="service-icon">📊</div><h3>Indicadores Personalizados</h3><p>Desenvolvimento de indicadores técnicos sob medida para sua estratégia, com sinais visuais claros de entrada e saída.</p></div>
+          <div class="service-card" style="opacity:0;"><div class="service-icon">🔍</div><h3>Screening Avançado</h3><p>Filtre ativos em tempo real com critérios personalizados. Identifique oportunidades antes do mercado.</p></div>
+          <div class="service-card" style="opacity:0;"><div class="service-icon">🔔</div><h3>Alarmes Inteligentes</h3><p>Alertas configuráveis por preço, volume, indicadores e padrões gráficos. Nunca perca uma oportunidade.</p></div>
+          <div class="service-card" style="opacity:0;"><div class="service-icon">🎨</div><h3>Regras de Coloração</h3><p>Visualize padrões no gráfico com coloração automática de candles, volumes e regiões de interesse.</p></div>
+          <div class="service-card" style="opacity:0;"><div class="service-icon">🤖</div><h3>Automação Completa</h3><p>Seu robô opera 100% automatizado: entrada, stop loss, take profit, trailing stop e gerenciamento de risco.</p></div>
+          <div class="service-card" style="opacity:0;"><div class="service-icon">₿</div><h3>Bots para Criptoativos</h3><p>Operações automatizadas na Binance com estratégias customizadas para o mercado de criptomoedas 24/7.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits reveal" id="benefits">
+      <div class="container">
+        <div class="section-header">
+          <h2>Por que <span class="text-gold">Automatizar?</span></h2>
+          <p>Traders profissionais sabem: consistência vence emoção. Deixe a tecnologia trabalhar a seu favor.</p>
+        </div>
+        <div class="benefits-grid" id="benefitsGrid">
+          <div class="benefit-card" style="opacity:0;"><div class="benefit-icon">🧠</div><div><h3>Elimine o Fator Emocional</h3><p>Robôs seguem a estratégia à risca, sem medo, ganância ou hesitação. Disciplina absoluta em cada operação.</p></div></div>
+          <div class="benefit-card" style="opacity:0;"><div class="benefit-icon">📈</div><div><h3>Backtest Completo</h3><p>Teste sua estratégia em dados históricos antes de colocar capital real em risco. Valide com confiança.</p></div></div>
+          <div class="benefit-card" style="opacity:0;"><div class="benefit-icon">🛡️</div><div><h3>Gerenciamento de Risco</h3><p>Stop loss, take profit, trailing stop e limites diários configuráveis. Proteja seu capital de forma automática.</p></div></div>
+          <div class="benefit-card" style="opacity:0;"><div class="benefit-icon">⚡</div><div><h3>Velocidade de Execução</h3><p>Ordens enviadas em milissegundos. Capture movimentos que o trader manual simplesmente não consegue.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem;"><span class="text-gold">Solicite um Orçamento</span></h2>
+            <p style="color:var(--muted-fg);margin-bottom:2rem;line-height:1.7;">Descreva sua estratégia e receba uma proposta personalizada. Atendemos traders iniciantes e profissionais.</p>
+          </div>
+          <form id="contactForm">
+            <div><label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required=""></div>
+            <div><label>Descreva sua estratégia</label><textarea name="estrategia" rows="4" placeholder="Descreva um resumo da estratégia que deseja automatizar..." required=""></textarea></div>
+            <button type="submit" class="btn-gold btn-gold-lg anim-pulse-glow" style="width:100%;justify-content:center;">Enviar via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container inner">
+        <div class="logo">
+          <span class="text-gold" style="font-family:var(--font-display);font-weight:700;font-size:1.125rem;">MLS</span>
+          <span style="color:var(--muted-fg);font-size:0.875rem;">TraderBots</span>
+        </div>
+        <p>© 2025 MLS TraderBots. Desenvolvimento de bots para trade na B3 e Criptoativos.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Intersection Observer for reveal animations
+    const observerOptions = { threshold: 0.15 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          const children = entry.target.querySelectorAll('[style*="opacity: 0"], [style*="opacity:0"]');
+          children.forEach((child, i) => {
+            child.style.animation = `countUp 0.8s ease-out ${0.15 * i}s forwards`;
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Contact form → WhatsApp
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = this.querySelector('input[name="nome"]').value;
+      const estrategia = this.querySelector('textarea[name="estrategia"]').value;
+      const text = encodeURIComponent('Olá, me chamo ' + nome + '.\nQuero um orçamento para minha estratégia:\n' + estrategia);
+      window.open('https://api.whatsapp.com/send?phone=5511993621054&text=' + text, '_blank');
+    });
+  </script>
+</body></html>

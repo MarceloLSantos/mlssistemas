@@ -16,10 +16,16 @@ Landing page profissional para **MLS Sistemas Automatizados**, desenvolvida em *
 ## 📁 Estrutura de Arquivos
 
 ```
-mls-landing-html/
-├── index.html          # Arquivo HTML principal
-├── styles.css          # Estilos CSS com animações
-├── script.js           # JavaScript para interatividade
+mlssistemas/
+├── index.html          # Página principal
+├── assets/
+│   ├── css/
+│   │   └── styles.css  # Estilos CSS (todas as páginas)
+│   ├── img/            # Imagens do site
+│   └── js/
+│       └── script.js   # JavaScript para interatividade
+├── traderbots/
+│   └── index.html      # Página MLS TraderBots
 ├── README.md           # Este arquivo
 └── .gitignore          # (Opcional) Para Git
 ```
@@ -73,7 +79,7 @@ Acesse: `http://localhost:8080`
 ## 🎨 Personalização
 
 ### Cores da Marca
-Edite as variáveis CSS em `styles.css`:
+Edite as variáveis CSS em `assets/css/styles.css`:
 
 ```css
 :root {

@@ -7,9 +7,10 @@
 ────────────────────────────────────────────────────────────────────────────
 
 ✓ index.html                          - Página principal (HTML5)
-✓ styles.css                          - Estilos e animações (CSS3)
-✓ script.js                           - Interatividade (JavaScript)
-✓ logo_mls_circuito_dourado.png       - Logo da empresa
+✓ assets/css/styles.css               - Estilos e animações (CSS3)
+✓ assets/js/script.js                 - Interatividade (JavaScript)
+✓ assets/img/                          - Imagens (logo, thumbs, etc.)
+✓ traderbots/index.html               - Página MLS TraderBots
 ✓ README.md                           - Documentação completa
 ✓ INSTRUÇÕES.txt                      - Este arquivo
 
@@ -59,7 +60,7 @@ A página é totalmente responsiva e funciona perfeitamente em:
 ────────────────────────────────────────────────────────────────────────────
 
 ALTERAR CORES:
-1. Abra "styles.css"
+1. Abra "assets/css/styles.css"
 2. Procure por ":root {"
 3. Modifique as variáveis:
    --mls-gold: #D4AF37;      (Dourado)

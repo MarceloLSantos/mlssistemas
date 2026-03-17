@@ -25,34 +25,34 @@
   Header always set Expires "0" env=NO_CACHE
 </IfModule>
 
-# Ciclos de vida de cache para melhorar LCP em visitas repetidas (PageSpeed Insights)
-# Requer mod_expires. No XAMPP/Apache costuma vir ativo.
-
+# Desabilitar cache para imagens: sempre baixar a versão mais recente em cada acesso
 <IfModule mod_expires.c>
   ExpiresActive On
 
-  # Imagens – 1 ano (os nomes dos arquivos mudam quando o conteúdo muda)
-  ExpiresByType image/png    "access plus 1 year"
-  ExpiresByType image/webp   "access plus 1 year"
-  ExpiresByType image/jpeg   "access plus 1 year"
-  ExpiresByType image/jpg    "access plus 1 year"
-  ExpiresByType image/gif    "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
-  ExpiresByType image/avif   "access plus 1 year"
+  # Imagens – sem cache
+  ExpiresByType image/png    "access plus 0 seconds"
+  ExpiresByType image/webp   "access plus 0 seconds"
+  ExpiresByType image/jpeg   "access plus 0 seconds"
+  ExpiresByType image/jpg    "access plus 0 seconds"
+  ExpiresByType image/gif    "access plus 0 seconds"
+  ExpiresByType image/svg+xml "access plus 0 seconds"
+  ExpiresByType image/x-icon "access plus 0 seconds"
+  ExpiresByType image/avif   "access plus 0 seconds"
 
-  # Fontes (se servir localmente no futuro)
+  # Fontes (se servir localmente no futuro) – mantive 1 ano
   ExpiresByType font/woff2   "access plus 1 year"
   ExpiresByType font/woff    "access plus 1 year"
 
-  # CSS e JS estáticos (se usar arquivos .css/.js externos)
+  # CSS e JS estáticos (se usar arquivos .css/.js externos) – mantive 1 mês
   ExpiresByType text/css     "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
 
-# Cache-Control como reforço (requer mod_headers)
+# Cache-Control das imagens também configurado para não cachear
 <IfModule mod_headers.c>
-  <FilesMatch "\.(png|webp|jpe?g|gif|svg|ico|avif|woff2?)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
+  <FilesMatch "\.(png|webp|jpe?g|gif|svg|ico|avif)$">
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
   </FilesMatch>
 </IfModule>
